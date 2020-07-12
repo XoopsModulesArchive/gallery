@@ -1,0 +1,129 @@
+
+	<{if $lb_box == "shadowbox"}>
+		<{if $load_jquery}>
+			<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/src/jquery.js"></script>
+        <{/if}>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/src/adapter/shadowbox-jquery.js"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/src/shadowbox.js"></script>
+
+		<script type="text/javascript">
+			Shadowbox.loadSkin('classic', 'src/skin');
+			Shadowbox.loadLanguage('en', 'src/lang');
+			Shadowbox.loadPlayer(['flv', 'html', 'iframe', 'img', 'qt', 'swf', 'wmp'], 'sb/player');
+
+			window.onload = function(){
+    			Shadowbox.init();
+			};
+		</script>
+	<{/if}>
+
+	<{if $lb_box == "lightbox"}>
+		<link rel="stylesheet" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/lb/css/lightbox.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lb/js/prototype.js"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lb/js/scriptaculous.js?load=effects,builder"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lb/js/lightbox.js"></script>
+	<{/if}>
+
+	<{if $lb_box == "wbox"}>
+		<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/wb/scripts/prototype.js" type="text/javascript"></script>
+		<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/wb/scripts/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/wb/scripts/weebbox.js"></script>
+		<link rel="stylesheet" type="text/css" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/wb/styles/weebbox.css" />
+	<{/if}>
+
+	<{if $lb_box == "fancybox"}>
+		<{if $load_jquery}>
+			<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fancyb/jquery.js"></script>
+        <{/if}>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fancyb/jquery.fancybox.js"></script> 
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fancyb/jquery.pngFix.js"></script> 
+		<!-- <script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fancyb/js/jquery.metadata.js"></script> -->
+		<link rel="stylesheet" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/fancyb/fancy.css" type="text/css" media="screen">
+
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("a.fancyb").fancybox({
+					'zoomSpeedIn':	5, 
+					'zoomSpeedOut':	5, 
+					'overlayShow':	true
+				});
+			});
+		</script>
+	<{/if}>
+	<{if $lb_box == "lightwindow"}>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lw/javascript/prototype.js"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lw/javascript/scriptaculous.js?load=effects"></script>
+		<script type="text/javascript" src="<{$xoops_url}>/modules/<{$xoops_dirname}>/lw/javascript/lightwindow.js"></script>
+		<link rel="stylesheet" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/lw/css/lightwindow.css" type="text/css" media="screen" />
+	<{/if}>
+
+	<{if $lb_box == "facebox"}>
+		<{if $load_jquery}>
+			<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fb/jquery.js" type="text/javascript"></script>
+        <{/if}>
+		<link href="<{$xoops_url}>/modules/<{$xoops_dirname}>/fb/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
+		<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/fb/facebox.js" type="text/javascript"></script> 
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+  				jQuery('a[rel*=facebox]').facebox();
+			});
+		</script>
+	<{/if}>
+
+	<{if $lb_box == "prettyPhoto"}>
+		<{if $load_jquery}>
+			<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/pp/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <{/if}>
+		<link rel="stylesheet" href="<{$xoops_url}>/modules/<{$xoops_dirname}>/pp/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+		<script src="<{$xoops_url}>/modules/<{$xoops_dirname}>/pp/js/prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+
+	<{/if}>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<{if $bannershow == "yes"}>
+<div id="galleryBanner">
+	<a href="<{$bannerlink}>" id="galleryBannerLink" target="_blank"><img src="<{$bannerimg}>"></a>
+</div>
+<{/if}>
+<table id="galContainer">  
+	<{if $banner != ""}>
+    	<tr>    	
+			<td id="galbanner">					
+				<{$banner}>           
+    		</td>      	
+    	</tr>
+     <{/if}>     	
+	<tr>
+    	<td id="galnav">
+        	<{$navigation}>
+        </td>
+    </tr>
+	<{if $description != ""}>
+    	<tr>
+    		<td id="galdesc">
+				<{$description}>
+            </td>
+        </tr>
+	<{/if}>
+	<tr>
+    	<td id="pagenumbers">
+        	<{$page_numbers}>
+        </td>
+    </tr>
+	<tr>
+    	<td>
+			<table id="galContent" class="foldersbox"><tr>
+			<{foreach item=collection from=$collections}>    			
+    			<{if ($collection.coll_count is div by $f_cols)}>
+    				</tr>
+        			<tr>
+    			<{/if}>
+				<td>            		
+					<{$collection.coll_link}>					
+				</td>  
+  			<{/foreach}>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>

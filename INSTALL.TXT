@@ -1,0 +1,14 @@
+Gallery
+Development of Gallery is done by Dana Harris (optikool)
+
+GALLERY XOOPS Installation:
+1. Make a backup of you database. 
+2. Upload gallery to modules/gallery
+3. Run the installer in Admin/Modules
+
+Post Installation
+1. Set your gallery Categories under Categories.
+2. Setup the path to your cache folder. Make sure this is writable. Uploads would be the best place to setup this folder.
+3. Go to New Collections and 
+5. Run the Update Thumbnails and click Add Collections to generate your thumbnails and add the collections to the database.
+6. Set your permissions for your first level gallery collections. This is different then setting the xoops module permissions.

@@ -1,0 +1,58 @@
+
+<link href="style.css" rel="stylesheet" type="text/css">
+<{if $bannershow == "yes"}>
+<div id="galleryBanner">
+	<a href="<{$bannerlink}>" id="galleryBannerLink" target="_blank"><img src="<{$bannerimg}>"></a>
+</div>
+<{/if}>
+<table id="galContainer">  
+	<{if $lang_rss_feed != ""}>
+    	<tr>    	
+			<td id="galrss">					
+				<{$lang_rss_feed}>           
+    		</td>      	
+    	</tr>
+     <{/if}>   	
+	<tr>
+    	<td id="galnav">
+        	<{$navigation}>
+        </td>
+    </tr>
+	<{if $description != ""}>
+    	<tr>
+    		<td id="galdesc">
+				<{$description}>
+            </td>
+        </tr>
+	<{/if}>
+	<tr>
+    	<td id="pagenumbers">
+        	<{$page_numbers}>
+        </td>
+    </tr>
+	<tr>
+    	<td>
+			<table id="galContent" class="foldersbox"><tr>
+			<{foreach item=collection from=$collections}>    			
+    			<{if ($collection.coll_count is div by $f_cols)}>
+    				</tr>
+        			<tr>
+    			<{/if}>
+				<td>            		
+					<a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/viewcoll.php?id=<{$collection.coll_id}>" class="linkopacity">
+						<img src="<{$collection.coll_thumb}>" />
+					</a>
+					<br /><{$collection.coll_name}>
+					<{if $show_date_added == 1}>
+						<br /><{$lang_date_added}> <{$collection.coll_date}>
+					<{/if}>
+					<{if $show_hits == 1}>
+						<br /><{$lang_hits}> <{$collection.coll_hits}>
+					<{/if}>
+				</td>  
+  			<{/foreach}>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>

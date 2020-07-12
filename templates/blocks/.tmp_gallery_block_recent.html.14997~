@@ -1,0 +1,36 @@
+<{foreach item=anime from=$block.anime}>
+	<{if $anime.enableffect == 'yes'}>
+    	
+	<script>
+		jQuery(document).ready(function() {       
+			jQuery('#galleryRecentBlock').innerfade({ 
+				animationtype: "<{$anime.animetype}>",
+				speed: "<{$anime.speed}>", 
+				timeout: <{$anime.timeout}>, 
+				type: "<{$anime.type}>", 
+				containerheight: "<{$anime.height}>px"
+			}).show();
+		});
+	</script>
+    <{/if}>
+
+    <{if $anime.enableffect == 'yes'}>
+    	<div id='galleryRecentBlock' style='display:none;'>
+    <{else}>
+    	<div id='galleryRecentBlock'>
+    <{/if}>
+<{/foreach}>
+	<table>
+    	<tr>
+        <{foreach item=galleryRecentLink key=count from=$block.recImg}>
+    		<td>
+			<{$galleryRecentLink.link}>
+            </td>
+            <{if $count is div by $block.colnum}>
+    			</tr>
+    			<tr>
+      		<{/if}>
+    	<{/foreach}>
+    	</tr>
+    </table>
+</div>

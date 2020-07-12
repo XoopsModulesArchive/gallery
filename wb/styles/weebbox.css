@@ -1,0 +1,75 @@
+#wbox_wrapper
+{
+	position: absolute; 
+	width: 100%; 
+	top: 0px;
+	left: 0px ;
+}
+
+#loading{ 
+	position: absolute; 
+	top: 8px; 
+	left: 0%; 
+	height: 25%; 
+	width: 100%; 
+	text-align: center; 
+	line-height: 0; 
+}
+
+#overlay
+{ 
+	position: absolute;
+	top: 0px;
+	left: 0px ;
+}
+
+#wbox
+{ 
+	position: relative ;
+	width: 32px;
+	height: 32px ;
+	margin: 0 auto ;
+}
+
+img.thumb
+{
+	border:1px solid #666666;
+}
+
+#wbox_data
+{ 
+	position: relative;
+	margin: 0 auto;
+}
+
+
+#controls
+{
+	position:absolute;
+}
+
+#info
+{
+	font-family:arial;
+	font-size:10px;
+	color:#fff;
+	padding-left:5px;
+}
+		
+a#prevLink, a#nextLink, a#closeLink, a#slideLink
+{
+	float:left;
+	width:25px;
+	height:30px;
+}
+
+a#prevLink { background-image:url(../images/prev.gif); }
+a#nextLink { background-image:url(../images/next.gif); }
+a#closeLink { background-image:url(../images/close.gif); }
+a#slideLink { background-image:url(../images/show.gif); }
+
+
+a#prevLink:hover, a#nextLink:hover
+{
+	text-decoration:underline;
+}

@@ -1,0 +1,15 @@
+<div id='galleryRandomBlock'>
+	<div class="collimg">
+		<{$block.randimg.imageanchor}>
+	</div>
+	<{if $block.randinfo.showname == "yes"}>
+		<div class="collname">
+			<{$block.randimg.collname}>
+		</div>
+	<{/if}>
+	<{if $block.randinfo.showhits == "yes"}>
+		<div class="collhits">
+			<{$block.randimg.hits}>
+		</div>
+	<{/if}>
+</div>

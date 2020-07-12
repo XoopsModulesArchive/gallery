@@ -1,0 +1,36 @@
+<{foreach item=anime from=$block.anime}>
+	<{if $anime.enableffect == "yes"}>
+    	<{if $anime.loadfader == "yes"}>
+			<script type="text/javascript" src="<{$xoops_url}>/modules/<{$anime.dirname}>/js/jquery.innerfade.js"></script>
+		<{/if}>	
+	<script>
+		jQuery(document).ready(function() {       
+			jQuery('#galleryRecentBlock').innerfade({ 
+				animationtype: "<{$anime.animetype}>",
+				speed: "<{$anime.speed}>", 
+				timeout: <{$anime.timeout}>, 
+				type: "<{$anime.type}>", 
+				containerheight: "<{$anime.height}>px"
+			}).show();
+		});
+	</script>
+    <{/if}>
+
+    <{if $anime.enableffect == "yes"}>
+    	<div id='galleryRecentBlock' style='display:none;'>
+    <{else}>
+    	<div id='galleryRecentBlock'>
+    <{/if}>
+<{/foreach}>
+    <{foreach item=galleryRecentLink key=count from=$block.recImg}>
+    	<div>
+			<{$galleryRecentLink.link}>
+        </div>
+        <{if !$anime.enableffect == "yes"}>
+			<{if $count is div by $block.colnum}>
+    			<div style="clear:both;"><!-- clear --></div>
+      		<{/if}>
+		<{/if}>
+    <{/foreach}>
+</div>
+

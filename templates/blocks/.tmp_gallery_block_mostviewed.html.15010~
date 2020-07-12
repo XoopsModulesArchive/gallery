@@ -1,0 +1,28 @@
+<{foreach item=mvanime from=$block.mvanime}>
+	<{if $mvanime.enableffect}>
+		<{if $mvanime.loadfader}>
+			<script type="text/javascript" src="<{$xoops_url}>/modules/<{$mvanime.dirname}>/js/jquery.innerfade.js"></script>
+		<{/if}>
+	<script>
+		jQuery(document).ready(function() {       
+			jQuery('#galleryMostViewedBlock').innerfade({ 
+				animationtype: "<{$mvanime.animetype}>",
+				speed: "<{$mvanime.speed}>", 
+				timeout: <{$mvanime.timeout}>, 
+				type: "<{$mvanime.type}>", 
+				containerheight: "<{$mvanime.height}>px"
+			}).show();
+		});
+	</script>
+    <{/if}>
+    <{if $anime.enableffect}>
+    	<div id='galleryMostViewedBlock' style='display:none;'>
+    <{else}>
+    	<div id='galleryMostViewedBlock'>
+    <{/if}>
+<{/foreach}>
+    <{foreach item=galleryMostViewedLink from=$block.mvImg}>
+    	<{$galleryMostViewedLink.mvlink}>
+    <{/foreach}>
+</div>
+<div class="clearFloat"><!-- clear --></div>
